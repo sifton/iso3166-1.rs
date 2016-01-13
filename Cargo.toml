@@ -1,6 +1,9 @@
 [package]
-name = "iso3166-1"
-version = "0.1.0"
 authors = ["Austin Hellyer <hello@austinhellyer.me>"]
-
-[dependencies]
+descript ion = "ISO 3166-1 data."
+license = "ISC"
+keywords = ["iso3166", "iso3166-1", "ISO", "3166", "3166-1"]
+name = "iso3166-1"
+readme = "README.md"
+repository = "https://github.com/taiyaeix/iso3166-3.rs"
+version = "0.1.0"
