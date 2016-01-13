@@ -34,6 +34,19 @@ fn get_all() {
     assert!(all().is_some());
 }
 
+// Ensure alpha2, alpha3, and num values are 2, 3, and 3 characters long,
+// respectively.
+#[test]
+fn value_lengths() {
+    let all = all().unwrap();
+
+    for val in all {
+        assert!(val.alpha2.len() == 2);
+        assert!(val.alpha3.len() == 3);
+        assert!(val.num.len() == 3);
+    }
+}
+
 #[test]
 fn get_alpha2() {
     // Test an lpha2 that exists.
