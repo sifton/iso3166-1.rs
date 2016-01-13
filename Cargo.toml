@@ -1,6 +1,6 @@
 [package]
 authors = ["Austin Hellyer <hello@austinhellyer.me>"]
-descript ion = "ISO 3166-1 data."
+description = "ISO 3166-1 data."
 license = "ISC"
 keywords = ["iso3166", "iso3166-1", "ISO", "3166", "3166-1"]
 name = "iso3166-1"
