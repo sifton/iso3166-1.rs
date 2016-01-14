@@ -86,6 +86,7 @@ extern crate iso3166_1;
 
 fn main() {
     let country = iso3166_1::num("016").unwrap();
+}
 ```
 
 
