@@ -1,9 +1,10 @@
 [package]
 authors = ["Austin Hellyer <hello@austinhellyer.me>"]
 description = "ISO 3166-1 data."
+homepage = "https://github.com/taiyaeix/iso3166-1.rs"
 license = "ISC"
 keywords = ["iso3166", "iso3166-1", "ISO", "3166", "3166-1"]
 name = "iso3166-1"
 readme = "README.md"
-repository = "https://github.com/taiyaeix/iso3166-1.rs"
+repository = "https://github.com/taiyaeix/iso3166-1.rs.git"
 version = "0.1.0"
