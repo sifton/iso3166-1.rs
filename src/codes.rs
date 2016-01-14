@@ -21,7 +21,7 @@
 // | countries, dependent territories, and special areas of geographical
 // | interest.
 // |
-// | - [Wikipedia](http://en.wikipedia.org/wiki/ISO_3166-3)
+// | - [Wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1)
 //
 // Originally by taiyaeix on GitHub.
 

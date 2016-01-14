@@ -16,7 +16,7 @@ Rust crate for ISO 3166-1 data.
 > Organization for Standardization (ISO), and defines codes for the names of
 > countries, dependent territories, and special areas of geographical interest.
 >
-> -- [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-3)
+> -- [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1)
 
 
 ### Installation
