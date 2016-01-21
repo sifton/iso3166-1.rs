@@ -52,11 +52,7 @@ pub struct CountryCode<'a> {
 /// # Examples
 ///
 /// ```rust
-/// extern crate iso3166_1;
-///
-/// fn main() {
-///     let countries = iso3166_1::all().unwrap();
-/// }
+/// let countries = iso3166_1::all().unwrap();
 /// ```
 pub fn all<'a>() -> Option<Vec<CountryCode<'a>>> {
     let codes: Vec<CountryCode> = country_codes();
@@ -73,11 +69,7 @@ pub fn all<'a>() -> Option<Vec<CountryCode<'a>>> {
 /// # Examples
 ///
 /// ```rust
-/// extern crate iso3166_1;
-///
-/// fn main() {
-///     let country = iso3166_1::alpha2("AF").unwrap();
-/// }
+/// let country = iso3166_1::alpha2("AF").unwrap();
 /// ```
 pub fn alpha2<'a>(alpha2: &str) -> Option<CountryCode<'a>> {
     let mut code_ret: Option<CountryCode> = None;
@@ -98,11 +90,7 @@ pub fn alpha2<'a>(alpha2: &str) -> Option<CountryCode<'a>> {
 /// # Examples
 ///
 /// ```rust
-/// extern crate iso3166_1;
-///
-/// fn main() {
-///     let country = iso3166_1::alpha3("ATA").unwrap();
-/// }
+/// let country = iso3166_1::alpha3("ATA").unwrap();
 /// ```
 pub fn alpha3<'a>(alpha3: &str) -> Option<CountryCode<'a>> {
     let mut code_ret: Option<CountryCode> = None;
@@ -123,11 +111,7 @@ pub fn alpha3<'a>(alpha3: &str) -> Option<CountryCode<'a>> {
 /// # Examples
 ///
 /// ```rust
-/// extern crate iso3166_1;
-///
-/// fn main() {
-///     let country = iso3166_1::name("Angola").unwrap();
-/// }
+/// let country = iso3166_1::name("Angola").unwrap();
 /// ```
 pub fn name<'a>(name: &str) -> Option<CountryCode<'a>> {
     let mut code_ret: Option<CountryCode> = None;
@@ -149,11 +133,7 @@ pub fn name<'a>(name: &str) -> Option<CountryCode<'a>> {
 /// # Examples
 ///
 /// ```rust
-/// extern crate iso3166_1;
-///
-/// fn main() {
-///     let country = iso3166_1::num("016").unwrap();
-/// }
+/// let country = iso3166_1::num("016").unwrap();
 /// ```
 pub fn num<'a>(num: &str) -> Option<CountryCode<'a>> {
     let mut code_ret: Option<CountryCode> = None;
@@ -178,42 +158,26 @@ pub fn num<'a>(num: &str) -> Option<CountryCode<'a>> {
 /// Getting all values between 100 and 300:
 ///
 /// ```rust
-/// extern crate iso3166_1;
-///
-/// fn main() {
-///     let countries = iso3166_1::num_range(Some("100"), Some("300"))
-///         .unwrap();
-/// }
+/// let countries = iso3166_1::num_range(Some("100"), Some("300"))
+///     .unwrap();
 /// ```
 ///
 /// Getting all values from 400 and beyond:
 ///
 /// ```rust
-/// extern crate iso3166_1;
-///
-/// fn main() {
-///     let countries = iso3166_1::num_range(Some("400"), None).unwrap();
-/// }
+/// let countries = iso3166_1::num_range(Some("400"), None).unwrap();
 /// ```
 ///
 /// Getting all values up to 500:
 ///
 /// ```rust
-/// extern crate iso3166_1;
-///
-/// fn main() {
-///     let countries = iso3166_1::num_range(None, Some("500")).unwrap();
-/// }
+/// let countries = iso3166_1::num_range(None, Some("500")).unwrap();
 /// ```
 ///
 /// Getting no values, if that's your thing:
 ///
 /// ```
-/// extern crate iso3166_1;
-///
-/// fn main() {
-///     let countries = iso3166_1::num_range(None, None).is_none();
-/// }
+/// let countries = iso3166_1::num_range(None, None).is_none();
 /// ```
 pub fn num_range<'a>(from: Option<&str>,
                      to: Option<&str>) -> Option<Vec<CountryCode<'a>>> {
