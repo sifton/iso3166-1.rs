@@ -113,4 +113,6 @@ fn main() {
 
 ### License
 
-License info in `LICENSE.md`. Long story short, ISC.
+License info in [LICENSE.md]. Long story short, ISC.
+
+[LICENSE.md]: https://github.com/taiyaeix/iso3166-1.rs/blob/master/LICENSE.md
