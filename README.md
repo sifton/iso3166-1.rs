@@ -1,6 +1,6 @@
-[travis-badge]: https://img.shields.io/travis/taiyaeix/iso3166-1.rs.svg
+[travis-badge]: https://img.shields.io/travis/taiyaeix/iso3166-1.rs.svg?style=flat-square
 [travis]: https://travis-ci.org/taiyaeix/iso3166-1.rs
-[license-badge]: https://img.shields.io/badge/license-ISC-blue.svg
+[license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
 [license]: https://opensource.org/licenses/ISC
 
 [![travis-badge][]][travis] [![license-badge][]][license]
