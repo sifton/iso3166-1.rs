@@ -27,6 +27,13 @@
 
 use CountryCode;
 
+/// Returns a `Vec` of all `CountryCode`s defined by ISO 3166-1.
+///
+/// # Examples
+///
+/// ```rust
+/// let countries = iso3166_1::all();
+/// ```
 // A function that returns a really big Vector of all the country codes
 // designated by ISO 3166-1.
 //
@@ -37,7 +44,7 @@ use CountryCode;
 //
 // Source:
 // https://en.wikipedia.org/wiki/ISO_3166-1#Officially_assigned_code_elements
-pub fn country_codes<'a>() -> Vec<CountryCode<'a>> {
+pub fn all<'a>() -> Vec<CountryCode<'a>> {
     let mut codes: Vec<CountryCode> = vec![];
 
     // Begin

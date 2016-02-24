@@ -27,7 +27,7 @@
 
 mod codes;
 
-use codes::country_codes;
+pub use codes::all;
 
 /// Struct that contains the data for each Country Code defined by ISO 3166-1,
 /// including the following pieces of information:
@@ -46,17 +46,6 @@ pub struct CountryCode<'a> {
     pub num: &'a str,
 }
 
-/// Returns a `Vec` of all `CountryCode`s defined by ISO 3166-1.
-///
-/// # Examples
-///
-/// ```rust
-/// let countries = iso3166_1::all();
-/// ```
-pub fn all<'a>() -> Vec<CountryCode<'a>> {
-    country_codes()
-}
-
 /// Returns an `Option` of a `CountryCode` with the given alpha2 code.
 ///
 /// # Examples
@@ -67,7 +56,7 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
 pub fn alpha2<'a>(alpha2: &str) -> Option<CountryCode<'a>> {
     let mut code_ret: Option<CountryCode> = None;
 
-    for code in country_codes() {
+    for code in all() {
         if code.alpha2 == alpha2 {
             code_ret = Some(code.clone());
 
@@ -88,7 +77,7 @@ pub fn alpha2<'a>(alpha2: &str) -> Option<CountryCode<'a>> {
 pub fn alpha3<'a>(alpha3: &str) -> Option<CountryCode<'a>> {
     let mut code_ret: Option<CountryCode> = None;
 
-    for code in country_codes() {
+    for code in all() {
         if code.alpha3 == alpha3 {
             code_ret = Some(code.clone());
 
@@ -109,7 +98,7 @@ pub fn alpha3<'a>(alpha3: &str) -> Option<CountryCode<'a>> {
 pub fn name<'a>(name: &str) -> Option<CountryCode<'a>> {
     let mut code_ret: Option<CountryCode> = None;
 
-    for code in country_codes() {
+    for code in all() {
         if code.name == name {
             code_ret = Some(code.clone());
 
@@ -130,7 +119,7 @@ pub fn name<'a>(name: &str) -> Option<CountryCode<'a>> {
 pub fn num<'a>(num: &str) -> Option<CountryCode<'a>> {
     let mut code_ret: Option<CountryCode> = None;
 
-    for code in country_codes() {
+    for code in all() {
         if code.num == num {
             code_ret = Some(code.clone());
 
@@ -188,7 +177,7 @@ pub fn num_range<'a>(from: Option<&str>,
         0
     };
 
-    for code in country_codes() {
+    for code in all() {
         let num_as_int: i16 = code.num.parse::<i16>().unwrap();
 
         let gte: bool = num_as_int >= from_val;
