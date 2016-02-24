@@ -32,10 +32,10 @@ use codes::country_codes;
 /// Struct that contains the data for each Country Code defined by ISO 3166-1,
 /// including the following pieces of information:
 ///
-/// - alpha2: Two-character Alpha-2 code;
-/// - alpha3: Three-character Alpha-3 code;
-/// - name: English short name of country;
-/// - num: Numeric code of country.
+/// - `alpha2` - Two-character Alpha-2 code.
+/// - `alpha3` - Three-character Alpha-3 code.
+/// - `name` - English short name of country.
+/// - `num` - Numeric code of country.
 ///
 /// Derives from Clone and Debug.
 #[derive(Clone, Debug)]
@@ -46,8 +46,7 @@ pub struct CountryCode<'a> {
     pub num: &'a str,
 }
 
-/// Returns an Option<Vec<CountryCode>> of all CountryCodes defined by
-/// ISO 3166-1.
+/// Returns an `Option` of a `Vec` of all `CountryCode`s defined by ISO 3166-1.
 ///
 /// # Examples
 ///
@@ -64,7 +63,7 @@ pub fn all<'a>() -> Option<Vec<CountryCode<'a>>> {
     }
 }
 
-/// Returns an Option<CountryCode> of a CountryCode with the given alpha2 code.
+/// Returns an `Option` of a `CountryCode` with the given alpha2 code.
 ///
 /// # Examples
 ///
@@ -85,7 +84,7 @@ pub fn alpha2<'a>(alpha2: &str) -> Option<CountryCode<'a>> {
     code_ret
 }
 
-/// Returns an Option<CountryCode> of a CountryCode with the given alpha3 code.
+/// Returns an `Option` of a `CountryCode` with the given alpha3 code.
 ///
 /// # Examples
 ///
@@ -106,7 +105,7 @@ pub fn alpha3<'a>(alpha3: &str) -> Option<CountryCode<'a>> {
     code_ret
 }
 
-/// Returns an Option<CountryCode> of a CountryCode with the given name.
+/// Returns an `Option` of a `CountryCode` with the given name.
 ///
 /// # Examples
 ///
@@ -127,8 +126,7 @@ pub fn name<'a>(name: &str) -> Option<CountryCode<'a>> {
     code_ret
 }
 
-/// Returns an Option<CountryCode> of a CountryCode with the given numeric
-/// value.
+/// Returns an `Option` of a `CountryCode` with the given numeric value.
 ///
 /// # Examples
 ///
@@ -149,26 +147,26 @@ pub fn num<'a>(num: &str) -> Option<CountryCode<'a>> {
     code_ret
 }
 
-/// Returns an Option<Vec<CountryCode>> of countries that have a numeric value
-/// within the range of the from and to given. The from and to are optional,
-/// and can either be None or a Some(&str) for variations of the range wanted.
+/// Returns an `Option` of a `Vec` of `CountryCode`s that have a numeric value
+/// within the range of the `from` and `to` given. The from and to are optional,
+/// and can either be `None` or `Some(&str)` for variations of the range wanted.
 ///
 /// # Examples
 ///
-/// Getting all values between 100 and 300:
+/// Getting all values between `100` and `300`:
 ///
 /// ```rust
 /// let countries = iso3166_1::num_range(Some("100"), Some("300"))
 ///     .unwrap();
 /// ```
 ///
-/// Getting all values from 400 and beyond:
+/// Getting all values from `400` and beyond:
 ///
 /// ```rust
 /// let countries = iso3166_1::num_range(Some("400"), None).unwrap();
 /// ```
 ///
-/// Getting all values up to 500:
+/// Getting all values up to `500`:
 ///
 /// ```rust
 /// let countries = iso3166_1::num_range(None, Some("500")).unwrap();
