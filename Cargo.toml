@@ -1,6 +1,7 @@
 [package]
 authors = ["Austin Hellyer <hello@austinhellyer.me>"]
 description = "ISO 3166-1 data."
+ducumentation = "http://docs.austinhellyer.me/iso3166_1"
 homepage = "https://github.com/taiyaeix/iso3166-1.rs"
 license = "ISC"
 keywords = ["iso3166", "iso3166-1", "ISO", "3166", "3166-1"]
