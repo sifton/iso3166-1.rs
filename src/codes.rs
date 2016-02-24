@@ -465,7 +465,7 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
     codes.push(CountryCode {
         alpha2: "FK",
         alpha3: "FLK",
-        name: "Falkland Islands (Malvinas)",
+        name: "Falkland Islands",
         num: "238",
     });
     codes.push(CountryCode {
