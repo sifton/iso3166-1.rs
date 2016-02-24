@@ -1,3 +1,5 @@
+#![allow(unused_variables)]
+
 extern crate iso3166_1;
 
 fn main() {
