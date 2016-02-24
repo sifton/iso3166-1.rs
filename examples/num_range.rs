@@ -14,7 +14,7 @@ fn main() {
     // Retrieve a `Vec` of `CountryCode`s whose numeric values are less than or
     // equal to `500`.
     let countries3 = iso3166_1::num_range(None, Some("500"));
-    
+
     // Consequentially, passing None to both the `from` and `to` parameters will
     // give you no countries.
     let countries4 = iso3166_1::num_range(None, None);
