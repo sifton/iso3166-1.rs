@@ -46,7 +46,7 @@ pub struct CountryCode<'a> {
     pub num: &'a str,
 }
 
-/// Returns an `Option` of a `Vec` of all `CountryCode`s defined by ISO 3166-1.
+/// Returns a `Vec` of all `CountryCode`s defined by ISO 3166-1.
 ///
 /// # Examples
 ///
@@ -141,9 +141,9 @@ pub fn num<'a>(num: &str) -> Option<CountryCode<'a>> {
     code_ret
 }
 
-/// Returns an `Option` of a `Vec` of `CountryCode`s that have a numeric value
-/// within the range of the `from` and `to` given. The from and to are optional,
-/// and can either be `None` or `Some(&str)` for variations of the range wanted.
+/// Returns a `Vec` of `CountryCode`s that have a numeric value within the range
+/// of the `from` and `to` given. The from and to are optional, and can either
+/// be `None` or `Some(&str)` for variations of the range wanted.
 ///
 /// # Examples
 ///

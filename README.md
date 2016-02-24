@@ -21,7 +21,7 @@ Rust crate for ISO 3166-1 data.
 
 ### Installation
 
-Add the following dependency to your Cargo.toml:
+Add the following dependency to your `Cargo.toml`:
 
 ```toml
 iso3166_1 = "*"
@@ -41,7 +41,7 @@ Retrieve all country codes:
 extern crate iso3166_1;
 
 fn main() {
-    let countries = iso3166_1::all().unwrap();
+    let countries = iso3166_1::all();
 }
 ```
 
@@ -96,17 +96,17 @@ Retrieve country codes by a range of their numeric numbers:
 extern crate iso3166_1;
 
 fn main() {
-    // Getting all values between 100 and 300:
-    iso3166_1::num_range(Some("100"), Some("300")).unwrap();
+    // Getting all values between `100` and `300`:
+    iso3166_1::num_range(Some("100"), Some("300"));
 
-    // Getting all values from 400 and beyond:
-    iso3166_1::num_range(Some("400"), None).unwrap();
+    // Getting all values from `400` and beyond:
+    iso3166_1::num_range(Some("400"), None);
 
-    // Getting all values up to 500:
-    iso3166_1::num_range(None, Some("500")).unwrap();
+    // Getting all values up to `500`:
+    iso3166_1::num_range(None, Some("500"));
 
     // Getting no values, if that's your thing:
-    iso3166_1::num_range(None, None).is_none();
+    iso3166_1::num_range(None, None);
 }
 ```
 
