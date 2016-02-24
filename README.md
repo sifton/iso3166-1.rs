@@ -24,7 +24,7 @@ Rust crate for ISO 3166-1 data.
 Add the following dependency to your `Cargo.toml`:
 
 ```toml
-iso3166_1 = "*"
+iso3166_1 = "0.1"
 ```
 
 And include it in your project:
