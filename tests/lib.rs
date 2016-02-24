@@ -31,14 +31,14 @@ use iso3166_1::{all, alpha2, alpha3, name, num, num_range};
 
 #[test]
 fn get_all() {
-    assert!(all().is_some());
+    assert!(all().len() > 0);
 }
 
 // Ensure alpha2, alpha3, and num values are 2, 3, and 3 characters long,
 // respectively.
 #[test]
 fn value_lengths() {
-    let all = all().unwrap();
+    let all = all();
 
     for val in all {
         assert!(val.alpha2.len() == 2);
@@ -86,26 +86,26 @@ fn get_num() {
 #[test]
 fn get_num_range() {
     // Test a Some-Some range with countries with nums within it.
-    assert!(num_range(Some("001"), Some("005")).is_some());
+    assert!(num_range(Some("001"), Some("005")).len() > 0);
     // And with no countries within it.
-    assert!(num_range(Some("001"), Some("003")).is_none());
+    assert!(num_range(Some("001"), Some("003")).len() == 0);
 
     // Test a None-Some range with countries with nums within it.
-    assert!(num_range(None, Some("004")).is_some());
+    assert!(num_range(None, Some("004")).len() > 0);
     // And with no countries within it.
-    assert!(num_range(None, Some("003")).is_none());
+    assert!(num_range(None, Some("003")).len() == 0);
 
     // Test a Some-None range with countries with nums within it.
-    assert!(num_range(Some("001"), None).is_some());
+    assert!(num_range(Some("001"), None).len() > 0);
     // And with no countries within it.
-    assert!(num_range(Some("1000"), None).is_none());
+    assert!(num_range(Some("1000"), None).len() == 0);
 
     // Test a None-None range, which is always None.
-    assert!(num_range(None, None).is_none());
+    assert!(num_range(None, None).len() == 0);
 }
 
 // Backwards compatibility tests.
 #[test]
 fn backwards_compat() {
-    assert!(all().unwrap().len() != 0);
+    assert!(all().len() != 0);
 }

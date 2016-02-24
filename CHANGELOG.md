@@ -6,6 +6,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+- `all()` and `num_range()` now return a `Vec` of `CountryCode`s, and not an
+  `Option` of a `Vec`. This was worthless because instead of a `Some` if there
+  was at least one entry or a `None` if there were none, a `len()` check on the
+  `Vec` can just be performed.
+
 ### Added
 
 

@@ -51,16 +51,10 @@ pub struct CountryCode<'a> {
 /// # Examples
 ///
 /// ```rust
-/// let countries = iso3166_1::all().unwrap();
+/// let countries = iso3166_1::all();
 /// ```
-pub fn all<'a>() -> Option<Vec<CountryCode<'a>>> {
-    let codes: Vec<CountryCode> = country_codes();
-
-    if codes.len() > 0 {
-        Some(codes)
-    } else {
-        None
-    }
+pub fn all<'a>() -> Vec<CountryCode<'a>> {
+    country_codes()
 }
 
 /// Returns an `Option` of a `CountryCode` with the given alpha2 code.
@@ -156,29 +150,28 @@ pub fn num<'a>(num: &str) -> Option<CountryCode<'a>> {
 /// Getting all values between `100` and `300`:
 ///
 /// ```rust
-/// let countries = iso3166_1::num_range(Some("100"), Some("300"))
-///     .unwrap();
+/// let countries = iso3166_1::num_range(Some("100"), Some("300"));
 /// ```
 ///
 /// Getting all values from `400` and beyond:
 ///
 /// ```rust
-/// let countries = iso3166_1::num_range(Some("400"), None).unwrap();
+/// let countries = iso3166_1::num_range(Some("400"), None);
 /// ```
 ///
 /// Getting all values up to `500`:
 ///
 /// ```rust
-/// let countries = iso3166_1::num_range(None, Some("500")).unwrap();
+/// let countries = iso3166_1::num_range(None, Some("500"));
 /// ```
 ///
 /// Getting no values, if that's your thing:
 ///
 /// ```
-/// let countries = iso3166_1::num_range(None, None).is_none();
+/// let countries = iso3166_1::num_range(None, None);
 /// ```
 pub fn num_range<'a>(from: Option<&str>,
-                     to: Option<&str>) -> Option<Vec<CountryCode<'a>>> {
+                     to: Option<&str>) -> Vec<CountryCode<'a>> {
     let mut codes: Vec<CountryCode> = vec![];
 
     let from_do: bool = from.is_some();
@@ -216,9 +209,5 @@ pub fn num_range<'a>(from: Option<&str>,
         }
     }
 
-    if codes.len() > 0 {
-        Some(codes)
-    } else {
-        None
-    }
+    codes
 }
