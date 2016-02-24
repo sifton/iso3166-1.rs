@@ -8,4 +8,4 @@ keywords = ["iso3166", "iso3166-1", "ISO", "3166", "3166-1"]
 name = "iso3166-1"
 readme = "README.md"
 repository = "https://github.com/taiyaeix/iso3166-1.rs.git"
-version = "^1.0.0"
+version = "1.0.0"
