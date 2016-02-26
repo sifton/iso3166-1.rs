@@ -9,6 +9,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 
+## [1.0.1] - 2016-02-25
+
+### Changed
+
+- Fixed a mis-typed entry as "ducumentation" in the Cargo file, which should be
+  "documentation".
+
+### Added
+
+
 ## [1.0.0] - 2016-02-24
 
 ### Changed
@@ -27,5 +37,6 @@ Initial commit.
 
 
 [Unreleased]: https://github.com/taiyaeix/iso3166-1.rs/compare/v1.0.0...HEAD
+[1.0.1]: https://github.com/taiyaeix/iso3166-1.rs/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/taiyaeix/iso3166-1.rs/compare/v0.1.0...v1.0.0
 [0.1.0]: https://github.com/taiyaeix/iso3166-1.rs/compare/b44021c...v0.1.0
