@@ -38,76 +38,52 @@ extern crate iso3166_1;
 Retrieve all country codes:
 
 ```rust
-extern crate iso3166_1;
-
-fn main() {
-    let countries = iso3166_1::all();
-}
+let countries = iso3166_1::all();
 ```
 
 
 Retrieve a country code by its alpha2 code:
 
 ```rust
-extern crate iso3166_1;
-
-fn main() {
-    let country = iso3166_1::alpha2("AF").unwrap();
-}
+let country = iso3166_1::alpha2("AF").unwrap();
 ```
 
 
 Retrieve a country code by its alpha3 code:
 
 ```rust
-extern crate iso3166_1;
-
-fn main() {
-    let country = iso3166_1::alpha3("ATA").unwrap();
-}
+let country = iso3166_1::alpha3("ATA").unwrap();
 ```
 
 
 Retrieve a country code by its name:
 
 ```rust
-extern crate iso3166_1;
-
-fn main() {
-    let country = iso3166_1::name("Angola").unwrap();
-}
+let country = iso3166_1::name("Angola").unwrap();
 ```
 
 
 Retrieve a country code by its numeric number:
 
 ```rust
-extern crate iso3166_1;
-
-fn main() {
-    let country = iso3166_1::num("016").unwrap();
-}
+let country = iso3166_1::num("016").unwrap();
 ```
 
 
 Retrieve country codes by a range of their numeric numbers:
 
 ```rust
-extern crate iso3166_1;
+// Getting all values between `100` and `300`:
+iso3166_1::num_range(Some("100"), Some("300"));
 
-fn main() {
-    // Getting all values between `100` and `300`:
-    iso3166_1::num_range(Some("100"), Some("300"));
+// Getting all values from `400` and beyond:
+iso3166_1::num_range(Some("400"), None);
 
-    // Getting all values from `400` and beyond:
-    iso3166_1::num_range(Some("400"), None);
+// Getting all values up to `500`:
+iso3166_1::num_range(None, Some("500"));
 
-    // Getting all values up to `500`:
-    iso3166_1::num_range(None, Some("500"));
-
-    // Getting no values, if that's your thing:
-    iso3166_1::num_range(None, None);
-}
+// Getting no values, if that's your thing:
+iso3166_1::num_range(None, None);
 ```
 
 
