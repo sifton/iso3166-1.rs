@@ -9,6 +9,8 @@
 
 Rust crate for ISO 3166-1 data.
 
+[Documentation](http://docs.austinhellyer.me/iso3166_1)
+
 
 ### What is ISO 3166-1
 
