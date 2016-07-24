@@ -1,5 +1,5 @@
-[travis-badge]: https://img.shields.io/travis/taiyaeix/iso3166-1.rs.svg?style=flat-square
-[travis]: https://travis-ci.org/taiyaeix/iso3166-1.rs
+[travis-badge]: https://img.shields.io/travis/zeyla/iso3166-1.rs.svg?style=flat-square
+[travis]: https://travis-ci.org/zeyla/iso3166-1.rs
 [license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
 [license]: https://opensource.org/licenses/ISC
 
@@ -93,4 +93,4 @@ iso3166_1::num_range(None, None);
 
 License info in [LICENSE.md]. Long story short, ISC.
 
-[LICENSE.md]: https://github.com/taiyaeix/iso3166-1.rs/blob/master/LICENSE.md
+[LICENSE.md]: https://github.com/zeyla/iso3166-1.rs/blob/master/LICENSE.md

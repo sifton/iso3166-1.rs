@@ -24,7 +24,7 @@
 # |
 # | - [Wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1)
 #
-# Originally by taiyaeix on GitHub.
+# Originally by zeyla on GitHub.
 
 # USAGE:
 # Requires python3. Go to the following page, sort by the numeric range, copy

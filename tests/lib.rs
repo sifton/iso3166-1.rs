@@ -23,7 +23,7 @@
 // |
 // | - [Wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1)
 //
-// Originally by taiyaeix on GitHub.
+// Originally by zeyla on GitHub.
 //
 extern crate iso3166_1;
 
