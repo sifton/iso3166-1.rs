@@ -18,5 +18,5 @@ fn main() {
     // Consequentially, passing None to both the `from` and `to` parameters will
     // give you no countries.
     let countries4 = iso3166_1::num_range(None, None);
-    assert!(countries4.len() == 0); // true
+    assert!(countries4.unwrap().len() == 0); // true
 }

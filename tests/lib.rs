@@ -86,22 +86,22 @@ fn get_num() {
 #[test]
 fn get_num_range() {
     // Test a Some-Some range with countries with nums within it.
-    assert!(num_range(Some("001"), Some("005")).len() > 0);
+    assert!(num_range(Some("001"), Some("005")).unwrap().len() > 0);
     // And with no countries within it.
-    assert!(num_range(Some("001"), Some("003")).len() == 0);
+    assert!(num_range(Some("001"), Some("003")).unwrap().len() == 0);
 
     // Test a None-Some range with countries with nums within it.
-    assert!(num_range(None, Some("004")).len() > 0);
+    assert!(num_range(None, Some("004")).unwrap().len() > 0);
     // And with no countries within it.
-    assert!(num_range(None, Some("003")).len() == 0);
+    assert!(num_range(None, Some("003")).unwrap().len() == 0);
 
     // Test a Some-None range with countries with nums within it.
-    assert!(num_range(Some("001"), None).len() > 0);
+    assert!(num_range(Some("001"), None).unwrap().len() > 0);
     // And with no countries within it.
-    assert!(num_range(Some("1000"), None).len() == 0);
+    assert!(num_range(Some("1000"), None).unwrap().len() == 0);
 
     // Test a None-None range, which is always None.
-    assert!(num_range(None, None).len() == 0);
+    assert!(num_range(None, None).unwrap().len() == 0);
 }
 
 // Backwards compatibility tests.

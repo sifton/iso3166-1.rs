@@ -29,105 +29,39 @@ mod codes;
 
 pub use codes::all;
 
-/// Struct that contains the data for each Country Code defined by ISO 3166-1,
-/// including the following pieces of information:
-///
-/// - `alpha2` - Two-character Alpha-2 code.
-/// - `alpha3` - Three-character Alpha-3 code.
-/// - `name` - English short name of country.
-/// - `num` - Numeric code of country.
-///
-/// Derives from Clone and Debug.
+use std::num::ParseIntError;
+
+/// Container for the data of each Country Code defined by ISO 3166-1,
 #[derive(Clone, Debug)]
 pub struct CountryCode<'a> {
+    /// Two-character Alpha2 code
     pub alpha2: &'a str,
+    /// Three-character Alpha3 code
     pub alpha3: &'a str,
+    /// English short name of the country
     pub name: &'a str,
+    /// NUmeric code of the country
     pub num: &'a str,
 }
 
-/// Returns an `Option` of a `CountryCode` with the given alpha2 code.
-///
-/// # Examples
-///
-/// ```rust
-/// let country = iso3166_1::alpha2("AF").unwrap();
-/// ```
+/// Returns the CountryCode with the given Alpha2 code if one exists.
 pub fn alpha2<'a>(alpha2: &str) -> Option<CountryCode<'a>> {
-    let mut code_ret: Option<CountryCode> = None;
-
-    for code in all() {
-        if code.alpha2 == alpha2 {
-            code_ret = Some(code.clone());
-
-            break;
-        }
-    }
-
-    code_ret
+    all().into_iter().find(|c| c.alpha2 == alpha2)
 }
 
-/// Returns an `Option` of a `CountryCode` with the given alpha3 code.
-///
-/// # Examples
-///
-/// ```rust
-/// let country = iso3166_1::alpha3("ATA").unwrap();
-/// ```
+/// Returns the CountryCode with the given Alpha3 code if one exists.
 pub fn alpha3<'a>(alpha3: &str) -> Option<CountryCode<'a>> {
-    let mut code_ret: Option<CountryCode> = None;
-
-    for code in all() {
-        if code.alpha3 == alpha3 {
-            code_ret = Some(code.clone());
-
-            break;
-        }
-    }
-
-    code_ret
+    all().into_iter().find(|c| c.alpha3 == alpha3)
 }
 
-/// Returns an `Option` of a `CountryCode` with the given name.
-///
-/// # Examples
-///
-/// ```rust
-/// let country = iso3166_1::name("Angola").unwrap();
-/// ```
+/// Returns the CountryCode with the given name if one exists.
 pub fn name<'a>(name: &str) -> Option<CountryCode<'a>> {
-    let mut code_ret: Option<CountryCode> = None;
-
-    for code in all() {
-        if code.name == name {
-            code_ret = Some(code.clone());
-
-            break;
-        }
-    }
-
-    code_ret
+    all().into_iter().find(|c| c.name == name)
 }
 
-/// Returns an `Option` of a `CountryCode` with the given numeric value.
-///
-/// # Examples
-///
-/// ```rust
-/// let country = iso3166_1::num("016").unwrap();
-/// ```
+/// Returns the CountryCode with the given number of one exists.
 pub fn num<'a>(num: &str) -> Option<CountryCode<'a>> {
-    let mut code_ret: Option<CountryCode> = None;
-
-    for code in all() {
-        if code.num == num {
-            code_ret = Some(code.clone());
-
-            break;
-        }
-    }
-
-    code_ret
+    all().into_iter().find(|c| c.num == num)
 }
 
 /// Returns a `Vec` of `CountryCode`s that have a numeric value within the range
@@ -160,43 +94,27 @@ pub fn num<'a>(num: &str) -> Option<CountryCode<'a>> {
 /// let countries = iso3166_1::num_range(None, None);
 /// ```
 pub fn num_range<'a>(from: Option<&str>,
-                     to: Option<&str>) -> Vec<CountryCode<'a>> {
-    let mut codes: Vec<CountryCode> = vec![];
+                     to: Option<&str>)
+                     -> Result<Vec<CountryCode<'a>>, ParseIntError> {
+    let from_do = from.is_some();
+    let to_do = to.is_some();
+    let from_val = try!(from.unwrap_or("0").parse::<i16>());
+    let to_val = try!(to.unwrap_or("0").parse::<i16>());
 
-    let from_do: bool = from.is_some();
-    let to_do: bool = to.is_some();
+    Ok(all().into_iter().filter(|code| {
+        let num_as_int = code.num.parse::<i16>().unwrap();
+        let gte = num_as_int >= from_val;
+        let lte = num_as_int <= to_val;
 
-    let from_val: i16 = if from_do {
-        from.unwrap().parse::<i16>().unwrap()
-    } else {
-        0
-    };
-    let to_val: i16 = if to_do {
-        to.unwrap().parse::<i16>().unwrap()
-    } else {
-        0
-    };
-
-    for code in all() {
-        let num_as_int: i16 = code.num.parse::<i16>().unwrap();
-
-        let gte: bool = num_as_int >= from_val;
-        let lte: bool = num_as_int <= to_val;
-
-        let matches: bool = if from_do && to_do {
-            gte && lte
-        } else if from_do {
-            gte
-        } else if to_do {
-            lte
-        } else {
-            false
-        };
-
-        if matches {
-            codes.push(code.clone());
-        }
-    }
-
-    codes
+        {
+            if from_do && to_do {
+                gte && lte
+            } else if from_do {
+                gte
+            } else if to_do {
+                lte
+            } else {
+                false
+            }
+        }}).collect())
 }
