@@ -8,7 +8,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-
 ## [1.0.1] - 2016-02-25
 
 ### Changed
@@ -17,7 +16,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
   "documentation".
 
 ### Added
-
 
 ## [1.0.0] - 2016-02-24
 
@@ -30,13 +28,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-
 ## [0.1.0] - 2016-01-13
 
 Initial commit.
 
-
-[Unreleased]: https://github.com/zeyla/iso3166-1.rs/compare/v1.0.0...HEAD
-[1.0.1]: https://github.com/zeyla/iso3166-1.rs/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/zeyla/iso3166-1.rs/compare/v0.1.0...v1.0.0
-[0.1.0]: https://github.com/zeyla/iso3166-1.rs/compare/b44021c...v0.1.0
+[Unreleased]: https://gitlab.com/kalasi/iso3166-1.rs/compare/v1.0.0...master
+[1.0.1]: https://gitlab.com/kalasi/iso3166-1.rs/compare/v1.0.0...v1.0.1
+[1.0.0]: https://gitlab.com/kalasi/iso3166-1.rs/compare/v0.1.0...v1.0.0
+[0.1.0]: https://gitlab.com/kalasi/iso3166-1.rs/compare/b44021c...v0.1.0

@@ -2,10 +2,10 @@
 authors = ["Austin Hellyer <hello@austinhellyer.me>"]
 description = "ISO 3166-1 data."
 documentation = "http://docs.austinhellyer.me/iso3166_1"
-homepage = "https://github.com/zeyla/iso3166-1.rs"
+homepage = "https://gitlab.com/kalasi/iso3166-1.rs"
 license = "ISC"
 keywords = ["iso3166", "iso3166-1", "ISO", "3166", "3166-1"]
 name = "iso3166-1"
 readme = "README.md"
-repository = "https://github.com/zeyla/iso3166-1.rs.git"
+repository = "https://gitlab.com/kalasi/iso3166-1.rs.git"
 version = "1.0.1"

@@ -1,16 +1,10 @@
-[travis-badge]: https://img.shields.io/travis/zeyla/iso3166-1.rs.svg?style=flat-square
-[travis]: https://travis-ci.org/zeyla/iso3166-1.rs
-[license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
-[license]: https://opensource.org/licenses/ISC
-
-[![travis-badge][]][travis] [![license-badge][]][license]
+[![ci-badge][]][ci] [![license-badge][]][license]
 
 # iso3166-1.rs
 
 Rust crate for ISO 3166-1 data.
 
 [Documentation](http://docs.austinhellyer.me/iso3166_1)
-
 
 ### What is ISO 3166-1
 
@@ -19,7 +13,6 @@ Rust crate for ISO 3166-1 data.
 > countries, dependent territories, and special areas of geographical interest.
 >
 > -- [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1)
-
 
 ### Installation
 
@@ -43,13 +36,11 @@ Retrieve all country codes:
 let countries = iso3166_1::all();
 ```
 
-
 Retrieve a country code by its alpha2 code:
 
 ```rust
 let country = iso3166_1::alpha2("AF").unwrap();
 ```
-
 
 Retrieve a country code by its alpha3 code:
 
@@ -57,20 +48,17 @@ Retrieve a country code by its alpha3 code:
 let country = iso3166_1::alpha3("ATA").unwrap();
 ```
 
-
 Retrieve a country code by its name:
 
 ```rust
 let country = iso3166_1::name("Angola").unwrap();
 ```
 
-
 Retrieve a country code by its numeric number:
 
 ```rust
 let country = iso3166_1::num("016").unwrap();
 ```
-
 
 Retrieve country codes by a range of their numeric numbers:
 
@@ -88,9 +76,12 @@ iso3166_1::num_range(None, Some("500"));
 iso3166_1::num_range(None, None);
 ```
 
-
 ### License
 
 License info in [LICENSE.md]. Long story short, ISC.
 
-[LICENSE.md]: https://github.com/zeyla/iso3166-1.rs/blob/master/LICENSE.md
+[ci]: https://gitlab.com/kalasi/iso3166-1.rs/pipelines
+[ci-badge]: https://gitlab.com/kalasi/iso3166-1.rs/badges/master/build.svg
+[license]: https://opensource.org/licenses/ISC
+[license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
+[LICENSE.md]: https://gitlab.com/kalasi/iso3166-1.rs/blob/master/LICENSE.md
