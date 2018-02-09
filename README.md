@@ -4,7 +4,7 @@
 
 Rust crate for ISO 3166-1 data.
 
-[Documentation](http://docs.austinhellyer.me/iso3166_1)
+[Documentation](http://docs.rs/iso3166_1)
 
 ### What is ISO 3166-1
 
@@ -80,8 +80,8 @@ iso3166_1::num_range(None, None);
 
 License info in [LICENSE.md]. Long story short, ISC.
 
-[ci]: https://gitlab.com/kalasi/iso3166-1.rs/pipelines
-[ci-badge]: https://gitlab.com/kalasi/iso3166-1.rs/badges/master/build.svg
+[ci]: https://github.com/zeyla/iso3166-1.rs/pipelines
+[ci-badge]: https://github.com/zeyla/iso3166-1.rs/badges/master/build.svg
 [license]: https://opensource.org/licenses/ISC
 [license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
-[LICENSE.md]: https://gitlab.com/kalasi/iso3166-1.rs/blob/master/LICENSE.md
+[LICENSE.md]: https://github.com/zeyla/iso3166-1.rs/blob/master/LICENSE.md
